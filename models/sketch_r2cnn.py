@@ -118,6 +118,15 @@ class SketchR2CNN(BaseModel):
         self.register_nets(nets, names, train_flags)
         self.to(device)
 
+    
+    def get_images(self, points, points_offset, lengths):
+        intensities, _ = self.rnn(points_offset, lengths)
+        images = RasterIntensityFunc.apply(points, intensities, self.img_size, self.thickness, self.eps, self.device)
+        if images.size(1) == 1:
+            images = images.repeat(1, 3, 1, 1)
+        return images
+
+
     def __call__(self, points, points_offset, lengths):
         intensities, _ = self.rnn(points_offset, lengths)
 

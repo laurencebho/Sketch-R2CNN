@@ -150,6 +150,9 @@ class BaseEval(object):
     def forward_sample(self, model, batch_data, index, drawing_ratio):
         raise NotImplementedError
 
+    def get_images(self, model, batch_data):
+        raise NotImplementedError
+
     def run(self):
         batch_size = self.config['batch_size']
         dataset_fn = self.config['dataset_fn']
@@ -217,6 +220,57 @@ class BaseEval(object):
         self.dataset.dispose()
         return accuracies, self.collect_stats
 
+    
+    '''
+    runs the first part of the model, returning the pixel images
+    '''
+    def partial_run(self):
+        batch_size = self.config['batch_size']
+        dataset_fn = self.config['dataset_fn']
+        dataset_root = self.config['dataset_root']
+        log_dir = self.config['log_dir']
+        mode = self.config['mode']
+
+        self.dataset = DATASETS[dataset_fn](dataset_root, mode)
+        self.prepare_dataset(self.dataset)
+        num_categories = self.dataset.num_categories()
+
+        print('[*] Number of categories:', num_categories)
+
+        net = self.create_model(num_categories)
+        net.print_params()
+        net.eval_mode()
+
+        data_loader = DataLoader(self.dataset,
+                                 batch_size=batch_size,
+                                 num_workers=3,
+                                 shuffle=False,
+                                 drop_last=False,
+                                 collate_fn=eval_data_collate,
+                                 pin_memory=True)
+
+        checkpoint = self.checkpoint_prefix()
+        if checkpoint is None:
+            raise Exception('[!] No valid checkpoint!')
+        loaded_paths = net.load(checkpoint)
+        print('[*] Loaded pretrained model from {}'.format(loaded_paths))
+
+        self.collect_stats = list()
+        running_corrects = [0] * len(self.drawing_ratios)
+        num_samples = [0] * len(self.drawing_ratios)
+        running_time = list()
+        pbar = tqdm.tqdm(total=len(data_loader))
+        for bid, batch_data in enumerate(data_loader):
+            for drid in range(len(self.drawing_ratios)):
+                dr = batch_data[drid][0]
+                batch_data_dr = batch_data[drid][1]
+
+                with torch.set_grad_enabled(False):
+                    images = self.get_images(net, batch_data_dr)
+            pbar.update()
+        pbar.close()
+
+        return images
 
 class SketchR2CNNEval(BaseEval):
 
@@ -254,3 +308,12 @@ class SketchR2CNNEval(BaseEval):
 
         _, predicts = torch.max(logits, 1)
         return logits, category, duration
+
+
+    def get_images(self, model, batch_data):
+        points = batch_data['points3'].to(self.device)
+        points_offset = batch_data['points3_offset'].to(self.device)
+        points_length = batch_data['points3_length']
+
+        images = model.get_images(points, points_offset, points_length)
+        return images
