@@ -8,7 +8,7 @@ if _project_folder_ not in sys.path:
     sys.path.insert(0, _project_folder_)
 
 #from scripts.base_eval import SketchR2CNNEval
-from . base_eval import SketchR2CNNEval
+from scripts.base_eval import SketchR2CNNEval
 
 if __name__ == '__main__':
     app = SketchR2CNNEval()
