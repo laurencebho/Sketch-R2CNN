@@ -5,12 +5,12 @@
 #SBATCH -p ug-gpu-small
 #SBATCH --qos=short
 #SBATCH -t 01-00:00:00
-#SBATCH --job-name=sketr2cnnLaurie
-#SBATCH --mem=4G
+#SBATCH --job-name=sketchr2cnnLaurie
+#SBATCH --mem=8G
 #SBATCH --mail-user laurence.ho@durham.ac.uk
 #SBATCH --mail-type=ALL
 
 source ~/pix2pixenv/bin/activate
-module load cuda/9.0-cudnn7.1
+module load cuda/10.1-cudnn7.6
 
-python quickdraw_r2cnn_get_images.py
+python scripts/quickdraw_r2cnn_get_images.py
