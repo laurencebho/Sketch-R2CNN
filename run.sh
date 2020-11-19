@@ -13,4 +13,5 @@
 source ~/pix2pixenv/bin/activate
 module load cuda/10.1-cudnn7.6
 
-python scripts/quickdraw_r2cnn_get_images.py
+cd scripts/
+python quickdraw_r2cnn_get_images.py
