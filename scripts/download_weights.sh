@@ -1,3 +1,3 @@
 #nb these urls expire after a short amount of time
 
-wget "" -O ../trained
+wget "https://s73j2g.dm.files.1drv.com/y4mCYCLK_4Bt7zjEShM1_iVyKOXa7njPHsJ0OZzdRCn4FGkP1Po-KnD1lLhTjbBkv2BpiKC_kQi8nIcrOCTfcFfNcLuRDInePjaCbpiLLJ5baA6IX9qhJOMZtIPCc4_3H8W7aDvxYT_tjumfZnDl3iVDCVZmnSl6kMoVVqpGfWFKJBEDo7zb7FcUw2DSuHfQlfQaxLLvwFQI1uWN9MAIJ6z6A" -O trained_weights.zip
