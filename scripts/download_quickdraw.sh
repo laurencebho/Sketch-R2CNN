@@ -1,4 +1,6 @@
-wget "https://s73j2g.dm.files.1drv.com/y4mvdh3TztmRRsFE06sqCoTmPhbWM1GiyVNLa3Brv39pIhbqlh4UX_aMo_J1u3Gf9Iwuowi0kHeCWq-cFePGt16Lr8BVekgYSkAo6GKZiyF4gDx8BhrywhgHGm5_Dm67Ev3wErMBjeyTnW-N1z67E5LD8JqZOJHMA4-q3WzADqGaainLWi5JiyZw5eGAAEFzrPZzl9mZOYoIS2zkZpwAZvYYA" -O ../quickdraw/quickdrqw_test.hdf5
+#nb these urls expire after a short amount of time
+
+wget "https://s73j2g.dm.files.1drv.com/y4mvdh3TztmRRsFE06sqCoTmPhbWM1GiyVNLa3Brv39pIhbqlh4UX_aMo_J1u3Gf9Iwuowi0kHeCWq-cFePGt16Lr8BVekgYSkAo6GKZiyF4gDx8BhrywhgHGm5_Dm67Ev3wErMBjeyTnW-N1z67E5LD8JqZOJHMA4-q3WzADqGaainLWi5JiyZw5eGAAEFzrPZzl9mZOYoIS2zkZpwAZvYYA" -O quickdraw_test.hdf5
 
 wget "https://s73j2g.dm.files.1drv.com/y4m2oXbnvMXPsDz-WJmy1h3ewR3ca41WP01Oy_qGpoP6RhGjPX0WjUQztqEfkC98I0VKCx6MWzMzK5t8EV6is6qDVuz9_lfBYAvd-BXKJxNOBGwlTaYLz-CPlQg7Uc-oZZLSnkmzA3NU1m62PZPuvSJzKjzaQO6XSLQ5g-wkuMyvXDPnuMYxi5L-NdGQOlyuHDEyV-sPWrr4cqOqV5YUqsl6A" -O quickraw_valid.hdf5
 
