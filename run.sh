@@ -10,8 +10,8 @@
 #SBATCH --mail-user laurence.ho@durham.ac.uk
 #SBATCH --mail-type=ALL
 
-source ~/pix2pixenv/bin/activate
+source ~/sketchr2cnnenv/bin/activate
 module load cuda/10.1-cudnn7.6
 
 cd scripts/
-python quickdraw_r2cnn_get_images.py
+python3 quickdraw_r2cnn_get_images.py
