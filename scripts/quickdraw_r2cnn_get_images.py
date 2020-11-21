@@ -3,6 +3,7 @@ import pickle
 import sys
 import warnings
 import torchvision
+import torch
 
 _project_folder_ = os.path.abspath('../')
 if _project_folder_ not in sys.path:
@@ -19,4 +20,6 @@ if __name__ == '__main__':
 
         #save the images as output pngs
         for i in range(images.size(0)):
-                torchvision.utils.save_image(images[i, :, :, :], f'{_project_folder_}/outputs/{i}.png')
+            im = images[i].clone().detach()
+            im = torch.transpose(im, 0, 2)
+            torchvision.utils.save_image(im, f'{_project_folder_}outputs/{i}.png')
