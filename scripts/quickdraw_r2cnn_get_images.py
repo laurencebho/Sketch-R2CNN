@@ -18,8 +18,14 @@ if __name__ == '__main__':
         warnings.simplefilter('ignore')
         images = app.partial_run()
 
+        print('IMAGES TENSOR:')
+        print(images.shape)
         #save the images as output pngs
         for i in range(images.size(0)):
             im = images[i].clone().detach()
             im = torch.transpose(im, 0, 2)
-            torchvision.utils.save_image(im, f'{_project_folder_}outputs/{i}.png')
+            print(im.shape)
+            try:
+                torchvision.utils.save_image(im, f'{_project_folder_}outputs/{i}.png')
+            except:
+                print('something went wrong')
