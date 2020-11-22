@@ -20,6 +20,11 @@ if __name__ == '__main__':
 
         print('IMAGES TENSOR:')
         print(images.shape)
+        try:
+            torch.save(images, 'image_tensor.pt')
+        except:
+            print('Images tensor could not be saved')
+
         #save the images as output pngs
         for i in range(images.size(0)):
             im = images[i].clone().detach()
@@ -28,4 +33,4 @@ if __name__ == '__main__':
             try:
                 torchvision.utils.save_image(im, f'{_project_folder_}outputs/{i}.png')
             except:
-                print('something went wrong')
+                print(f'image {i} could not be saved')
