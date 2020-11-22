@@ -21,7 +21,7 @@ if __name__ == '__main__':
         print('IMAGES TENSOR:')
         print(images.shape)
         try:
-            torch.save(images, 'image_tensor.pt')
+            torch.save(images, 'image_tensor3.pt')
         except:
             print('Images tensor could not be saved')
 
