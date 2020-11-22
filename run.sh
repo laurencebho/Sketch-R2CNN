@@ -27,7 +27,8 @@ mkdir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_eval"
         --checkpoint "${CL_LOG_DIR}/${CL_CKPT_PREFIX}" \
         --dataset_fn ${CL_DATASET} \
         --dataset_root "${CL_DATASET_ROOT}" \
-        --intensity_channels 8 \
+        --intensity_channels 3 \
         --log_dir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images" \
         --model_fn ${CL_MODEL} \
+        --batch-size 100 \
     2>&1 | tee -a "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images/get_images.log"
