@@ -1,0 +1,23 @@
+mkdir: cannot create directory ‘../trained_weights/quickdraw_resnet50_eval’: File exists
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+usage: quickdraw_r2cnn_get_images.py [-h] [--batch_size BATCH_SIZE]
+                                     [--checkpoint CHECKPOINT]
+                                     [--ckpt_step_freq CKPT_STEP_FREQ]
+                                     [--dataset_fn DATASET_FN]
+                                     [--dataset_root DATASET_ROOT] [--gpu GPU]
+                                     [--imgsize IMGSIZE] [--log_dir LOG_DIR]
+                                     [--max_ckpt_step MAX_CKPT_STEP]
+                                     [--max_points MAX_POINTS]
+                                     [--min_ckpt_step MIN_CKPT_STEP]
+                                     [--mode MODE] [--model_fn MODEL_FN]
+                                     [--note NOTE] [--seed SEED]
+                                     [--thickness THICKNESS]
+                                     [--dropout DROPOUT]
+                                     [--intensity_channels INTENSITY_CHANNELS]
+quickdraw_r2cnn_get_images.py: error: unrecognized arguments: --batch-size 100
+Loading extension module rasterize_cuda...

@@ -1,0 +1,341 @@
+mkdir: cannot create directory ‘../trained_weights/quickdraw_resnet50_eval’: File exists
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:1
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 240, in partial_run
+    net = self.create_model(num_categories)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 297, in create_model
+    device=self.device)
+  File "/home2/gftw82/Sketch-R2CNN/models/sketch_r2cnn.py", line 119, in __init__
+    self.to(device)
+  File "/home2/gftw82/Sketch-R2CNN/models/basemodel.py", line 127, in to
+    net.to(device)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 612, in to
+    return self._apply(convert)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 155, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/nn/modules/module.py", line 610, in convert
+    return t.to(device, dtype if t.is_floating_point() else None, non_blocking)
+RuntimeError: CUDA error: invalid device ordinal
+mv: cannot stat 'image_tensor3.pt': No such file or directory

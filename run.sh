@@ -23,6 +23,8 @@ CL_LOG_DIR="../trained_weights"
 CL_CKPT_PREFIX="quickdraw_${CL_MODEL}"
 mkdir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_eval"
 
+for i in {1..10}
+do
     python quickdraw_r2cnn_get_images.py \
         --checkpoint "${CL_LOG_DIR}/${CL_CKPT_PREFIX}" \
         --dataset_fn ${CL_DATASET} \
@@ -30,5 +32,8 @@ mkdir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_eval"
         --intensity_channels 8 \
         --log_dir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images" \
         --model_fn ${CL_MODEL} \
-        --batch_size 100 \
+	--gpu 1 \
     2>&1 | tee -a "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images/get_images.log"
+
+    mv image_tensor3.pt image_tensor_num$i.pt
+done

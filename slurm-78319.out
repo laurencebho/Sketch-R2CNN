@@ -1,0 +1,284 @@
+mkdir: cannot create directory ‘../trained_weights/quickdraw_resnet50_eval’: File exists
+Using /home2/gftw82/.cache/torch_extensions as PyTorch extensions root...
+Detected CUDA files, patching ldflags
+Emitting ninja build file /home2/gftw82/.cache/torch_extensions/rasterize_cuda/build.ninja...
+Building extension module rasterize_cuda...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] /apps/cuda/cuda-10.1-cudnn7.6/bin/nvcc -DTORCH_EXTENSION_NAME=rasterize_cuda -DTORCH_API_INCLUDE_EXTENSION_H -isystem /home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include -isystem /home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/torch/csrc/api/include -isystem /home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/TH -isystem /home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/THC -isystem /apps/cuda/cuda-10.1-cudnn7.6/include -isystem /usr/include/python3.6m -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_75,code=sm_75 --compiler-options '-fPIC' -std=c++14 -c /home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu -o rasterize_cuda_kernel.cuda.o 
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu: In function ‘void rasterize_cuda_forward(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, int, float, float)’:
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:177:122: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_forward_kernel<float><<<blocks, threads>>>(
+                                                                                                                          ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:177:159: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_forward_kernel<float><<<blocks, threads>>>(
+                                                                                                                                                               ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:177:192: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_forward_kernel<float><<<blocks, threads>>>(
+                                                                                                                                                                                                ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:177:220: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_forward_kernel<float><<<blocks, threads>>>(
+                                                                                                                                                                                                                            ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:177:285: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_forward_kernel<float><<<blocks, threads>>>(
+                                                                                                                                                                                                                                                                                             ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:177:314: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_forward_kernel<float><<<blocks, threads>>>(
+                                                                                                                                                                                                                                                                                                                          ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu: In function ‘void rasterize_cuda_backward(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, int, float, float)’:
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:215:143: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_backward_kernel_intensities<float><<<blocks, threads>>>(
+                                                                                                                                               ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:215:180: warning: ‘T* at::Tensor::data() const [with T = int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_backward_kernel_intensities<float><<<blocks, threads>>>(
+                                                                                                                                                                                    ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:215:213: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_backward_kernel_intensities<float><<<blocks, threads>>>(
+                                                                                                                                                                                                                     ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+/home2/gftw82/Sketch-R2CNN/neuralline/rasterize_cuda_kernel.cu:215:298: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+     rasterize_cuda_backward_kernel_intensities<float><<<blocks, threads>>>(
+                                                                                                                                                                                                                                                                                                          ^
+/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/include/ATen/core/TensorBody.h:363:1: note: declared here
+   T * data() const {
+ ^ ~~
+[2/2] c++ rasterize_cuda.o rasterize_cuda_kernel.cuda.o -shared -L/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/apps/cuda/cuda-10.1-cudnn7.6/lib64 -lcudart -o rasterize_cuda.so
+Loading extension module rasterize_cuda...
+[*] Using device: cuda:0
+[*] Created a new test dataset: ../quickdraw
+[*] Number of categories: 345
+[*] ResNet50Backbone: use a new conv1 with 8 input channels
+[*] Model Parameters:
+[*]  Trainable Module rnn
+[*]    rnn.weight_ih_l0: torch.Size([2048, 3])
+[*]    rnn.weight_hh_l0: torch.Size([2048, 512])
+[*]    rnn.bias_ih_l0: torch.Size([2048])
+[*]    rnn.bias_hh_l0: torch.Size([2048])
+[*]    rnn.weight_ih_l0_reverse: torch.Size([2048, 3])
+[*]    rnn.weight_hh_l0_reverse: torch.Size([2048, 512])
+[*]    rnn.bias_ih_l0_reverse: torch.Size([2048])
+[*]    rnn.bias_hh_l0_reverse: torch.Size([2048])
+[*]    rnn.weight_ih_l1: torch.Size([2048, 1024])
+[*]    rnn.weight_hh_l1: torch.Size([2048, 512])
+[*]    rnn.bias_ih_l1: torch.Size([2048])
+[*]    rnn.bias_hh_l1: torch.Size([2048])
+[*]    rnn.weight_ih_l1_reverse: torch.Size([2048, 1024])
+[*]    rnn.weight_hh_l1_reverse: torch.Size([2048, 512])
+[*]    rnn.bias_ih_l1_reverse: torch.Size([2048])
+[*]    rnn.bias_hh_l1_reverse: torch.Size([2048])
+[*]    attend_fc.weight: torch.Size([8, 1024])
+[*]    attend_fc.bias: torch.Size([8])
+[*]  None-Trainable Module conv
+[*]    conv1_new.weight: torch.Size([64, 8, 7, 7])
+[*]    bn1.weight: torch.Size([64])
+[*]    bn1.bias: torch.Size([64])
+[*]    layer1.0.conv1.weight: torch.Size([64, 64, 1, 1])
+[*]    layer1.0.bn1.weight: torch.Size([64])
+[*]    layer1.0.bn1.bias: torch.Size([64])
+[*]    layer1.0.conv2.weight: torch.Size([64, 64, 3, 3])
+[*]    layer1.0.bn2.weight: torch.Size([64])
+[*]    layer1.0.bn2.bias: torch.Size([64])
+[*]    layer1.0.conv3.weight: torch.Size([256, 64, 1, 1])
+[*]    layer1.0.bn3.weight: torch.Size([256])
+[*]    layer1.0.bn3.bias: torch.Size([256])
+[*]    layer1.0.downsample.0.weight: torch.Size([256, 64, 1, 1])
+[*]    layer1.0.downsample.1.weight: torch.Size([256])
+[*]    layer1.0.downsample.1.bias: torch.Size([256])
+[*]    layer1.1.conv1.weight: torch.Size([64, 256, 1, 1])
+[*]    layer1.1.bn1.weight: torch.Size([64])
+[*]    layer1.1.bn1.bias: torch.Size([64])
+[*]    layer1.1.conv2.weight: torch.Size([64, 64, 3, 3])
+[*]    layer1.1.bn2.weight: torch.Size([64])
+[*]    layer1.1.bn2.bias: torch.Size([64])
+[*]    layer1.1.conv3.weight: torch.Size([256, 64, 1, 1])
+[*]    layer1.1.bn3.weight: torch.Size([256])
+[*]    layer1.1.bn3.bias: torch.Size([256])
+[*]    layer1.2.conv1.weight: torch.Size([64, 256, 1, 1])
+[*]    layer1.2.bn1.weight: torch.Size([64])
+[*]    layer1.2.bn1.bias: torch.Size([64])
+[*]    layer1.2.conv2.weight: torch.Size([64, 64, 3, 3])
+[*]    layer1.2.bn2.weight: torch.Size([64])
+[*]    layer1.2.bn2.bias: torch.Size([64])
+[*]    layer1.2.conv3.weight: torch.Size([256, 64, 1, 1])
+[*]    layer1.2.bn3.weight: torch.Size([256])
+[*]    layer1.2.bn3.bias: torch.Size([256])
+[*]    layer2.0.conv1.weight: torch.Size([128, 256, 1, 1])
+[*]    layer2.0.bn1.weight: torch.Size([128])
+[*]    layer2.0.bn1.bias: torch.Size([128])
+[*]    layer2.0.conv2.weight: torch.Size([128, 128, 3, 3])
+[*]    layer2.0.bn2.weight: torch.Size([128])
+[*]    layer2.0.bn2.bias: torch.Size([128])
+[*]    layer2.0.conv3.weight: torch.Size([512, 128, 1, 1])
+[*]    layer2.0.bn3.weight: torch.Size([512])
+[*]    layer2.0.bn3.bias: torch.Size([512])
+[*]    layer2.0.downsample.0.weight: torch.Size([512, 256, 1, 1])
+[*]    layer2.0.downsample.1.weight: torch.Size([512])
+[*]    layer2.0.downsample.1.bias: torch.Size([512])
+[*]    layer2.1.conv1.weight: torch.Size([128, 512, 1, 1])
+[*]    layer2.1.bn1.weight: torch.Size([128])
+[*]    layer2.1.bn1.bias: torch.Size([128])
+[*]    layer2.1.conv2.weight: torch.Size([128, 128, 3, 3])
+[*]    layer2.1.bn2.weight: torch.Size([128])
+[*]    layer2.1.bn2.bias: torch.Size([128])
+[*]    layer2.1.conv3.weight: torch.Size([512, 128, 1, 1])
+[*]    layer2.1.bn3.weight: torch.Size([512])
+[*]    layer2.1.bn3.bias: torch.Size([512])
+[*]    layer2.2.conv1.weight: torch.Size([128, 512, 1, 1])
+[*]    layer2.2.bn1.weight: torch.Size([128])
+[*]    layer2.2.bn1.bias: torch.Size([128])
+[*]    layer2.2.conv2.weight: torch.Size([128, 128, 3, 3])
+[*]    layer2.2.bn2.weight: torch.Size([128])
+[*]    layer2.2.bn2.bias: torch.Size([128])
+[*]    layer2.2.conv3.weight: torch.Size([512, 128, 1, 1])
+[*]    layer2.2.bn3.weight: torch.Size([512])
+[*]    layer2.2.bn3.bias: torch.Size([512])
+[*]    layer2.3.conv1.weight: torch.Size([128, 512, 1, 1])
+[*]    layer2.3.bn1.weight: torch.Size([128])
+[*]    layer2.3.bn1.bias: torch.Size([128])
+[*]    layer2.3.conv2.weight: torch.Size([128, 128, 3, 3])
+[*]    layer2.3.bn2.weight: torch.Size([128])
+[*]    layer2.3.bn2.bias: torch.Size([128])
+[*]    layer2.3.conv3.weight: torch.Size([512, 128, 1, 1])
+[*]    layer2.3.bn3.weight: torch.Size([512])
+[*]    layer2.3.bn3.bias: torch.Size([512])
+[*]    layer3.0.conv1.weight: torch.Size([256, 512, 1, 1])
+[*]    layer3.0.bn1.weight: torch.Size([256])
+[*]    layer3.0.bn1.bias: torch.Size([256])
+[*]    layer3.0.conv2.weight: torch.Size([256, 256, 3, 3])
+[*]    layer3.0.bn2.weight: torch.Size([256])
+[*]    layer3.0.bn2.bias: torch.Size([256])
+[*]    layer3.0.conv3.weight: torch.Size([1024, 256, 1, 1])
+[*]    layer3.0.bn3.weight: torch.Size([1024])
+[*]    layer3.0.bn3.bias: torch.Size([1024])
+[*]    layer3.0.downsample.0.weight: torch.Size([1024, 512, 1, 1])
+[*]    layer3.0.downsample.1.weight: torch.Size([1024])
+[*]    layer3.0.downsample.1.bias: torch.Size([1024])
+[*]    layer3.1.conv1.weight: torch.Size([256, 1024, 1, 1])
+[*]    layer3.1.bn1.weight: torch.Size([256])
+[*]    layer3.1.bn1.bias: torch.Size([256])
+[*]    layer3.1.conv2.weight: torch.Size([256, 256, 3, 3])
+[*]    layer3.1.bn2.weight: torch.Size([256])
+[*]    layer3.1.bn2.bias: torch.Size([256])
+[*]    layer3.1.conv3.weight: torch.Size([1024, 256, 1, 1])
+[*]    layer3.1.bn3.weight: torch.Size([1024])
+[*]    layer3.1.bn3.bias: torch.Size([1024])
+[*]    layer3.2.conv1.weight: torch.Size([256, 1024, 1, 1])
+[*]    layer3.2.bn1.weight: torch.Size([256])
+[*]    layer3.2.bn1.bias: torch.Size([256])
+[*]    layer3.2.conv2.weight: torch.Size([256, 256, 3, 3])
+[*]    layer3.2.bn2.weight: torch.Size([256])
+[*]    layer3.2.bn2.bias: torch.Size([256])
+[*]    layer3.2.conv3.weight: torch.Size([1024, 256, 1, 1])
+[*]    layer3.2.bn3.weight: torch.Size([1024])
+[*]    layer3.2.bn3.bias: torch.Size([1024])
+[*]    layer3.3.conv1.weight: torch.Size([256, 1024, 1, 1])
+[*]    layer3.3.bn1.weight: torch.Size([256])
+[*]    layer3.3.bn1.bias: torch.Size([256])
+[*]    layer3.3.conv2.weight: torch.Size([256, 256, 3, 3])
+[*]    layer3.3.bn2.weight: torch.Size([256])
+[*]    layer3.3.bn2.bias: torch.Size([256])
+[*]    layer3.3.conv3.weight: torch.Size([1024, 256, 1, 1])
+[*]    layer3.3.bn3.weight: torch.Size([1024])
+[*]    layer3.3.bn3.bias: torch.Size([1024])
+[*]    layer3.4.conv1.weight: torch.Size([256, 1024, 1, 1])
+[*]    layer3.4.bn1.weight: torch.Size([256])
+[*]    layer3.4.bn1.bias: torch.Size([256])
+[*]    layer3.4.conv2.weight: torch.Size([256, 256, 3, 3])
+[*]    layer3.4.bn2.weight: torch.Size([256])
+[*]    layer3.4.bn2.bias: torch.Size([256])
+[*]    layer3.4.conv3.weight: torch.Size([1024, 256, 1, 1])
+[*]    layer3.4.bn3.weight: torch.Size([1024])
+[*]    layer3.4.bn3.bias: torch.Size([1024])
+[*]    layer3.5.conv1.weight: torch.Size([256, 1024, 1, 1])
+[*]    layer3.5.bn1.weight: torch.Size([256])
+[*]    layer3.5.bn1.bias: torch.Size([256])
+[*]    layer3.5.conv2.weight: torch.Size([256, 256, 3, 3])
+[*]    layer3.5.bn2.weight: torch.Size([256])
+[*]    layer3.5.bn2.bias: torch.Size([256])
+[*]    layer3.5.conv3.weight: torch.Size([1024, 256, 1, 1])
+[*]    layer3.5.bn3.weight: torch.Size([1024])
+[*]    layer3.5.bn3.bias: torch.Size([1024])
+[*]    layer4.0.conv1.weight: torch.Size([512, 1024, 1, 1])
+[*]    layer4.0.bn1.weight: torch.Size([512])
+[*]    layer4.0.bn1.bias: torch.Size([512])
+[*]    layer4.0.conv2.weight: torch.Size([512, 512, 3, 3])
+[*]    layer4.0.bn2.weight: torch.Size([512])
+[*]    layer4.0.bn2.bias: torch.Size([512])
+[*]    layer4.0.conv3.weight: torch.Size([2048, 512, 1, 1])
+[*]    layer4.0.bn3.weight: torch.Size([2048])
+[*]    layer4.0.bn3.bias: torch.Size([2048])
+[*]    layer4.0.downsample.0.weight: torch.Size([2048, 1024, 1, 1])
+[*]    layer4.0.downsample.1.weight: torch.Size([2048])
+[*]    layer4.0.downsample.1.bias: torch.Size([2048])  0%|          | 0/8623 [00:00<?, ?it/s]
+[*]    layer4.1.conv1.weight: torch.Size([512, 2048, 1, 1])
+[*]    layer4.1.bn1.weight: torch.Size([512])
+[*]    layer4.1.bn1.bias: torch.Size([512])
+[*]    layer4.1.conv2.weight: torch.Size([512, 512, 3, 3])
+[*]    layer4.1.bn2.weight: torch.Size([512])
+[*]    layer4.1.bn2.bias: torch.Size([512])
+[*]    layer4.1.conv3.weight: torch.Size([2048, 512, 1, 1])
+[*]    layer4.1.bn3.weight: torch.Size([2048])
+[*]    layer4.1.bn3.bias: torch.Size([2048])
+[*]    layer4.2.conv1.weight: torch.Size([512, 2048, 1, 1])
+[*]    layer4.2.bn1.weight: torch.Size([512])
+[*]    layer4.2.bn1.bias: torch.Size([512])
+[*]    layer4.2.conv2.weight: torch.Size([512, 512, 3, 3])
+[*]    layer4.2.bn2.weight: torch.Size([512])
+[*]    layer4.2.bn2.bias: torch.Size([512])
+[*]    layer4.2.conv3.weight: torch.Size([2048, 512, 1, 1])
+[*]    layer4.2.bn3.weight: torch.Size([2048])
+[*]    layer4.2.bn3.bias: torch.Size([2048])
+[*]  Trainable Module fc
+[*]    weight: torch.Size([345, 2048])
+[*]    bias: torch.Size([345])
+[*] Model Size: 32.65610M
+[*] Loaded pretrained model from ['../trained_weights/quickdraw_resnet50_rnn.pth', '../trained_weights/quickdraw_resnet50_conv.pth', '../trained_weights/quickdraw_resnet50_fc.pth']
+Traceback (most recent call last):
+  File "quickdraw_r2cnn_get_images.py", line 19, in <module>
+    images = app.partial_run()
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 263, in partial_run
+    for bid, batch_data in enumerate(data_loader):
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+AssertionError: Caught AssertionError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home2/gftw82/sketchr2cnnenv/lib/python3.6/site-packages/torch/utils/data/_utils/fetch.py", line 47, in fetch
+    return self.collate_fn(data)
+  File "/home2/gftw82/Sketch-R2CNN/scripts/base_eval.py", line 37, in eval_data_collate
+    assert len(batch) == 1
+AssertionError
+
+  0%|          | 0/8623 [00:00<?, ?it/s]

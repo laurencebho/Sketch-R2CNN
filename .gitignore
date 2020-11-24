@@ -1,4 +1,3 @@
-*.out
 outputs/
 quickdraw/
 trained_weights/
