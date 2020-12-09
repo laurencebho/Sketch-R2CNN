@@ -23,23 +23,13 @@ CL_DATASET_ROOT="../sketchy_small.pkl"
 CL_LOG_DIR="../trained_weights"
 
 CL_CKPT_PREFIX="sketchy_${CL_MODEL}"
-mkdir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_eval"
+mkdir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images"
 
-sudo nvidia-docker run --rm \
-    --network=host \
-    --shm-size 8G \
-    -v /:/host \
-    -v /tmp/torch_extensions:/tmp/torch_extensions \
-    -v /tmp/torch_models:/root/.torch \
-    -w "/host$PWD" \
-    -e PYTHONUNBUFFERED=x \
-    -e CUDA_CACHE_PATH=/host/tmp/cuda-cache \
-    craigleili/sketch-r2cnn:latest \
-    python sketchy_get_images.py \
-        --checkpoint "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_fold{}" \
-        --dataset_fn ${CL_DATASET} \
-        --dataset_root "${CL_DATASET_ROOT}" \
-        --intensity_channels 8 \
-        --log_dir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images" \
-        --model_fn ${CL_MODEL} \
-    2>&1 | tee -a "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images/get_images.log"
+python sketchy_get_images.py \
+    --checkpoint "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_fold{}" \
+    --dataset_fn ${CL_DATASET} \
+    --dataset_root "${CL_DATASET_ROOT}" \
+    --intensity_channels 8 \
+    --log_dir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images" \
+    --model_fn ${CL_MODEL} \
+2>&1 | tee -a "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images/get_images.log"
