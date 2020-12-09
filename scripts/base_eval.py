@@ -12,6 +12,7 @@ import sys
 import time
 import torch
 import tqdm
+import torchvision
 
 from pathlib import Path
 from torch.utils.data import DataLoader
@@ -23,13 +24,14 @@ if _project_folder_ not in sys.path:
 from data.quickdraw_dataset import QuickDrawDataset
 from data.sketch_util import SketchUtil
 from data.tuberlin_dataset import TUBerlinDataset
+from data.sketchy_dataset import SketchyDataset
 from models.modelzoo import CNN_MODELS, CNN_IMAGE_SIZES
 from models.sketch_r2cnn import SketchR2CNN
 from neuralline.rasterize import Raster
 from scripts.base_train import train_data_collate
 
 
-DATASETS = {'tuberlin': TUBerlinDataset, 'quickdraw': QuickDrawDataset}
+DATASETS = {'tuberlin': TUBerlinDataset, 'quickdraw': QuickDrawDataset, 'sketchy': SketchyDataset}
 DRAWING_RATIOS = [0.25, 0.5, 0.75, 1]
 
 
@@ -267,6 +269,7 @@ class BaseEval(object):
 
                 with torch.set_grad_enabled(False):
                     images = self.get_images(net, batch_data_dr)
+                    torch.save(images[0], f'{_project_folder_}outputs/{bid}.pt')
             pbar.update()
         pbar.close()
 

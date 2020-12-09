@@ -1,3 +1,4 @@
+
 import numpy as np
 import os.path
 import sys
@@ -10,7 +11,7 @@ if _project_folder_ not in sys.path:
 from scripts.base_eval import SketchR2CNNEval
 
 
-class TUBerlinSketchR2CNNEval(SketchR2CNNEval):
+class SketchySketchR2CNNEval(SketchR2CNNEval):
 
     def __init__(self):
         super().__init__()
@@ -29,11 +30,16 @@ class TUBerlinSketchR2CNNEval(SketchR2CNNEval):
 
 
 if __name__ == '__main__':
-    app = TUBerlinSketchR2CNNEval()
+    app = SketchySketchR2CNNEval()
 
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
 
+        xvalid_accus = list()
         for fidx in range(3):
             app.set_fold(fidx)
-            accuracies, stats = app.partial_run()
+            accuracies, stats = app.run()
+            xvalid_accus.append(accuracies)
+        avg_xvalid_accus = np.mean(np.array(xvalid_accus, dtype=np.float32), axis=0)
+        print('Progressive Recognition Accuracies:\n')
+        print(avg_xvalid_accus)
