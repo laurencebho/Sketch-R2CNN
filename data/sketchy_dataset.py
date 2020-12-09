@@ -34,7 +34,7 @@ class SketchyDataset(Dataset):
 
         third = self.num_sketches // 3        
 
-        index_slice = [i for i in range(third * (i-1), third * i)]
+        index_slice = [i for i in range(third * (idx-1), third * idx)]
         if self.mode == 'train': #use whole DS
             self.indices = [i for i in range(self.num_sketches)]
         else: #use a third of the DS
