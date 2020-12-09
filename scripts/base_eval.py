@@ -110,6 +110,12 @@ class BaseEval(object):
             config['max_points'] = 448
             config['min_ckpt_step'] = 20
             config['mode'] = 'valid'
+        elif config['dataset_fn'] == 'tuberlin':
+            config['ckpt_step_freq'] = 20
+            config['max_ckpt_step'] = 100
+            config['max_points'] = 700
+            config['min_ckpt_step'] = 20
+            config['mode'] = 'valid'
         else:
             raise Exception('Not valid dataset name!')
 
