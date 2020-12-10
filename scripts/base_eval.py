@@ -67,6 +67,36 @@ def eval_data_collate(batch):
     return res
 
 
+#no drawing ratios
+def eval_data_collate_simple(batch):
+    assert len(batch) == 1
+    drawing_ratio = 1
+
+    res = list()
+    points3 = np.copy(batch[0]['points3'])
+    fname = batch[0]['fname'][:4] #strip the '.svg' from the end
+    category = batch[0]['category']
+
+    points3_length = len(points3)
+    points3_offset = np.copy(points3)
+    points3_offset[1:points3_length, 0:2] = points3[1:, 0:2] - points3[:points3_length - 1, 0:2]
+    intensities = 1.0 - np.arange(points3_length, dtype=np.float32) / float(points3_length - 1)
+
+    batch_new = {
+        'points3': [points3],
+        'fname': fname,
+        'points3_offset': [points3_offset],
+        'points3_length': [points3_length],
+        'intensities': [intensities],
+        'category': [category]
+    }
+    batch_collate = dict()
+    for k, v in batch_new.items():
+        batch_collate[k] = torch.from_numpy(np.array(v))
+    res.append((drawing_ratio, batch_collate))
+    return res
+
+
 class BaseEval(object):
 
     def __init__(self):
@@ -255,7 +285,7 @@ class BaseEval(object):
                                  num_workers=3,
                                  shuffle=False,
                                  drop_last=False,
-                                 collate_fn=eval_data_collate,
+                                 collate_fn=eval_data_collate_simple,
                                  pin_memory=True)
 
         checkpoint = self.checkpoint_prefix()
@@ -270,15 +300,13 @@ class BaseEval(object):
         running_time = list()
         pbar = tqdm.tqdm(total=len(data_loader))
         for bid, batch_data in enumerate(data_loader):
-            for drid in range(len(self.drawing_ratios)):
-                dr = batch_data[drid][0]
-                batch_data_dr = batch_data[drid][1]
+            batch_data_dr = batch_data[1]
 
-                with torch.set_grad_enabled(False):
-                    images = self.get_images(net, batch_data_dr)
-                    index = len(os.listdir(f'{_project_folder_}/outputs/'))
-                    torch.save(images[0], f'{_project_folder_}/outputs/{index}.pt')
-                    print(f'image {index} saved')
+            with torch.set_grad_enabled(False):
+                im = torch.squeeze(self.get_images(net, batch_data_dr))
+                save_name = batch_data_dr['fname']
+                torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
+                print(f'image {save_name} saved')
             pbar.update()
         pbar.close()
 

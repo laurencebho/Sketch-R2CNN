@@ -24,6 +24,7 @@ class SketchyDataset(Dataset):
             self.categories = saved['categories']
             self.num_sketches = len(saved['categories'][0])
             self.sketches = saved['sketches']
+            self.fnames = saved['fnames']
 
         self.fold_idx = None
         self.indices = list()
@@ -68,7 +69,7 @@ class SketchyDataset(Dataset):
             sid_points[:, 0:2] = pts_xy
             if self.drop_strokes:
                 sid_points = self._random_drop_strokes(sid_points)
-        sample = {'points3': sid_points, 'category': cid}
+        sample = {'points3': sid_points, 'category': cid, 'fname': self.fnames[sid]}
         return sample
 
     def _random_drop_strokes(self, points3):
