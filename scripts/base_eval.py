@@ -275,7 +275,7 @@ class BaseEval(object):
 
                 with torch.set_grad_enabled(False):
                     images = self.get_images(net, batch_data_dr)
-                    torch.save(images[0], f'{_project_folder_}outputs/{bid}.pt')
+                    torch.save(images[0], f'{_project_folder_}/outputs/{bid}.pt')
             pbar.update()
         pbar.close()
 
