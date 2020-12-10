@@ -5,6 +5,7 @@ import argparse
 import cv2
 import json
 import numpy as np
+import os
 import os.path
 import pickle
 import random
@@ -275,8 +276,9 @@ class BaseEval(object):
 
                 with torch.set_grad_enabled(False):
                     images = self.get_images(net, batch_data_dr)
-                    torch.save(images[0], f'{_project_folder_}/outputs/{bid}.pt')
-                    print(f'image {bid} saved')
+                    index = len(os.listdir(f'{_project_folder_}/outputs/'))
+                    torch.save(images[0], f'{_project_folder_}/outputs/{index}.pt')
+                    print(f'image {index} saved')
             pbar.update()
         pbar.close()
 
