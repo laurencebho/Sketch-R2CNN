@@ -1,4 +1,3 @@
-
 import numpy as np
 import os.path
 import sys
@@ -35,11 +34,6 @@ if __name__ == '__main__':
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
 
-        xvalid_accus = list()
         for fidx in range(3):
             app.set_fold(fidx)
-            accuracies, stats = app.run()
-            xvalid_accus.append(accuracies)
-        avg_xvalid_accus = np.mean(np.array(xvalid_accus, dtype=np.float32), axis=0)
-        print('Progressive Recognition Accuracies:\n')
-        print(avg_xvalid_accus)
+            accuracies, stats = app.partial_run()
