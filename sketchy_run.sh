@@ -25,7 +25,7 @@ CL_LOG_DIR="../trained_weights"
 CL_CKPT_PREFIX="sketchy_${CL_MODEL}"
 mkdir "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_get_images"
 
-python sketchy_get_images.py \
+python -u sketchy_get_images.py \
     --checkpoint "${CL_LOG_DIR}/${CL_CKPT_PREFIX}_fold{}" \
     --dataset_fn ${CL_DATASET} \
     --dataset_root "${CL_DATASET_ROOT}" \
