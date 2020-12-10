@@ -320,9 +320,9 @@ class SketchR2CNNEval(BaseEval):
 
 
     def get_images(self, model, batch_data):
-        points = batch_data['points3'].to(self.device)
-        points_offset = batch_data['points3_offset'].to(self.device)
-        points_length = batch_data['points3_length']
+        points = batch_data['points3'].to(self.device).float()
+        points_offset = batch_data['points3_offset'].to(self.device).float()
+        points_length = batch_data['points3_length'].float()
 
         images = model.get_images(points, points_offset, points_length)
         return images
