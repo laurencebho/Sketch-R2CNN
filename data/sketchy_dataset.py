@@ -41,7 +41,7 @@ class SketchyDataset(Dataset):
             small_slice = []
             for i in range(self.num_sketches):
                 if i not in index_slice:
-                    small_slice.append(small_slice)
+                    small_slice.append(i)
             self.indices = small_slice
 
         print('[*] Created a new {} dataset with {} fold as validation data'.format(self.mode, idx))
