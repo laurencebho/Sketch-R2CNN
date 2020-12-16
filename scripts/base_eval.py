@@ -33,7 +33,7 @@ from scripts.base_train import train_data_collate
 
 DATASETS = {'tuberlin': TUBerlinDataset, 'quickdraw': QuickDrawDataset, 'sketchy': SketchyDataset}
 DRAWING_RATIOS = [0.25, 0.5, 0.75, 1]
-
+FILENAMES = [] #original svg filenames
 
 def eval_data_collate(batch):
     assert len(batch) == 1
@@ -80,10 +80,12 @@ def eval_data_collate_simple(batch):
     points3_offset = np.copy(points3)
     points3_offset[1:points3_length, 0:2] = points3[1:, 0:2] - points3[:points3_length - 1, 0:2]
     intensities = 1.0 - np.arange(points3_length, dtype=np.float32) / float(points3_length - 1)
+    
+    FILENAMES.append(fname)
 
     batch_new = {
         'points3': [points3],
-        'fname': [fname],
+        'fname_index': [len(FILENAMES) - 1],
         'points3_offset': [points3_offset],
         'points3_length': [points3_length],
         'intensities': [intensities],
@@ -303,7 +305,7 @@ class BaseEval(object):
 
             with torch.set_grad_enabled(False):
                 im = torch.squeeze(self.get_images(net, batch_data_dr))
-                save_name = batch_data_dr['fname']
+                save_name = FILENAMES[batch_data_dr['fname_index']]
                 #torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
                 torch.save(im, '{0}/outputs/{1}.pt'.format(_project_folder_, save_name))
 
