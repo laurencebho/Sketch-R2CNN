@@ -305,6 +305,11 @@ class BaseEval(object):
 
             with torch.set_grad_enabled(False):
                 im = torch.squeeze(self.get_images(net, batch_data_dr))
+
+                print(FILENAMES)
+                print(len(FILENAMES))
+                print(batch_data_dr['fname_index'])
+                
                 save_name = FILENAMES[batch_data_dr['fname_index']]
                 #torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
                 torch.save(im, '{0}/outputs/{1}.pt'.format(_project_folder_, save_name))
