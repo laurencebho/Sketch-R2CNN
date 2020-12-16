@@ -302,7 +302,7 @@ class BaseEval(object):
         pbar = tqdm.tqdm(total=len(data_loader))
         for bid, batch_data in enumerate(data_loader):
             print(batch_data)
-            batch_data_dr = batch_data[1]
+            batch_data_dr = batch_data[0][1]
 
             with torch.set_grad_enabled(False):
                 im = torch.squeeze(self.get_images(net, batch_data_dr))
