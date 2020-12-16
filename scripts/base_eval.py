@@ -82,6 +82,8 @@ def eval_data_collate_simple(batch):
     intensities = 1.0 - np.arange(points3_length, dtype=np.float32) / float(points3_length - 1)
     
     FILENAMES.append(fname)
+    print('appended')
+    print(FILENAMES)
 
     batch_new = {
         'points3': [points3],
