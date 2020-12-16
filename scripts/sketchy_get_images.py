@@ -36,4 +36,4 @@ if __name__ == '__main__':
 
         for fidx in range(3):
             app.set_fold(fidx)
-            images = app.partial_run()
+            app.partial_run()

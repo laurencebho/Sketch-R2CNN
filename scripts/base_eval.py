@@ -13,7 +13,6 @@ import sys
 import time
 import torch
 import tqdm
-import torchvision
 
 from pathlib import Path
 from torch.utils.data import DataLoader
@@ -84,7 +83,7 @@ def eval_data_collate_simple(batch):
 
     batch_new = {
         'points3': [points3],
-        'fname': fname,
+        'fname': [fname],
         'points3_offset': [points3_offset],
         'points3_length': [points3_length],
         'intensities': [intensities],
@@ -305,12 +304,13 @@ class BaseEval(object):
             with torch.set_grad_enabled(False):
                 im = torch.squeeze(self.get_images(net, batch_data_dr))
                 save_name = batch_data_dr['fname']
-                torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
-                print(f'image {save_name} saved')
+                #torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
+                torch.save(im, '{0}/outputs/{1}.pt'.format(_project_folder_, save_name))
+
+                print('image {0} saved'.format(save_name))
             pbar.update()
         pbar.close()
 
-        return images
 
 class SketchR2CNNEval(BaseEval):
 

@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
-        images = app.partial_run()
+        app.partial_run()
 
         '''
         #save the images as output pngs
