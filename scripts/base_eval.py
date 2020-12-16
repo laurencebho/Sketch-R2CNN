@@ -68,6 +68,7 @@ def eval_data_collate(batch):
 
 #no drawing ratios
 def eval_data_collate_simple(batch):
+    print('collating')
     assert len(batch) == 1
     drawing_ratio = 1
 
@@ -303,14 +304,11 @@ class BaseEval(object):
         running_time = list()
         pbar = tqdm.tqdm(total=len(data_loader))
         for bid, batch_data in enumerate(data_loader):
+            print(f'iteration number {bid}')
             batch_data_dr = batch_data[0][1]
 
             with torch.set_grad_enabled(False):
                 im = torch.squeeze(self.get_images(net, batch_data_dr))
-
-                print(FILENAMES)
-                print(len(FILENAMES))
-                print(batch_data_dr['fname_index'])
                 
                 save_name = FILENAMES[batch_data_dr['fname_index']]
                 #torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
