@@ -71,10 +71,9 @@ class SketchyDataset(Dataset):
             sid_points[:, 0:2] = pts_xy
             if self.drop_strokes:
                 sid_points = self._random_drop_strokes(sid_points)
-            if self.mode == 'train':
-                fname_index = sid
-            else:
-                fname_index = self.offset + sid
+            fname_index = sid
+        else:
+            fname_index = self.offset + sid
         sample = {'points3': sid_points, 'category': cid, 'fname_index': fname_index}
         return sample
 
