@@ -74,7 +74,7 @@ def eval_data_collate_simple(batch):
 
     res = list()
     points3 = np.copy(batch[0]['points3'])
-    fname = batch[0]['fname'][:4] #strip the '.svg' from the end
+    fname_index = batch[0]['fname_index']
     category = batch[0]['category']
 
     points3_length = len(points3)
@@ -82,13 +82,9 @@ def eval_data_collate_simple(batch):
     points3_offset[1:points3_length, 0:2] = points3[1:, 0:2] - points3[:points3_length - 1, 0:2]
     intensities = 1.0 - np.arange(points3_length, dtype=np.float32) / float(points3_length - 1)
     
-    FILENAMES.append(fname)
-    print('appended')
-    print(FILENAMES)
-
     batch_new = {
         'points3': [points3],
-        'fname_index': [len(FILENAMES) - 1],
+        'fname_index': [fname_index],
         'points3_offset': [points3_offset],
         'points3_length': [points3_length],
         'intensities': [intensities],
@@ -111,6 +107,7 @@ class BaseEval(object):
 
         self.collect_stats = None
         self.dataset = None
+        self.fnames = None
         self.drawing_ratios = DRAWING_RATIOS
 
     def _parse_args(self):
@@ -276,6 +273,7 @@ class BaseEval(object):
 
         self.dataset = DATASETS[dataset_fn](dataset_root, mode)
         self.prepare_dataset(self.dataset)
+        self.fnames = self.dataset.get_fnames()
         num_categories = self.dataset.num_categories()
 
         print('[*] Number of categories:', num_categories)
@@ -310,7 +308,7 @@ class BaseEval(object):
             with torch.set_grad_enabled(False):
                 im = torch.squeeze(self.get_images(net, batch_data_dr))
                 
-                save_name = FILENAMES[batch_data_dr['fname_index']]
+                save_name = self.fnames[batch_data_dr['fname_index']]
                 #torch.save(im, f'{_project_folder_}/outputs/{save_name}.pt')
                 torch.save(im, '{0}/outputs/{1}.pt'.format(_project_folder_, save_name))
 

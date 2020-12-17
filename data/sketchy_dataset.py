@@ -27,6 +27,7 @@ class SketchyDataset(Dataset):
             self.fnames = saved['fnames']
 
         self.fold_idx = None
+        self.offset = 0 #for folds
         self.indices = list()
 
     def set_fold(self, idx):
@@ -34,8 +35,9 @@ class SketchyDataset(Dataset):
         self.indices = list()
 
         third = self.num_sketches // 3        
+        self.offset = third * idx
 
-        index_slice = [i for i in range(third * (idx-1), third * idx)]
+        index_slice = [i for i in range(third * idx, third * (idx + 1))]
         if self.mode == 'train': #use whole DS
             self.indices = [i for i in range(self.num_sketches)]
         else: #use a third of the DS
@@ -69,7 +71,11 @@ class SketchyDataset(Dataset):
             sid_points[:, 0:2] = pts_xy
             if self.drop_strokes:
                 sid_points = self._random_drop_strokes(sid_points)
-        sample = {'points3': sid_points, 'category': cid, 'fname': self.fnames[sid]}
+            if self.mode == 'train':
+                fname_index = sid
+            else:
+                fname_index = self.offset + sid
+        sample = {'points3': sid_points, 'category': cid, 'fname_index': fname_index}
         return sample
 
     def _random_drop_strokes(self, points3):
@@ -86,6 +92,9 @@ class SketchyDataset(Dataset):
 
     def num_categories(self):
         return len(self.categories)
+        
+    def get_fnames(self):
+        return self.fnames
 
     def dispose(self):
         pass
