@@ -34,6 +34,10 @@ if __name__ == '__main__':
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
 
+        app.set_fold(0) #run on whole ds
+        app.partial_run()
+        '''
         for fidx in range(3):
             app.set_fold(fidx)
             app.partial_run()
+        '''

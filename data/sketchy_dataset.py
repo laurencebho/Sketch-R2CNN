@@ -38,6 +38,9 @@ class SketchyDataset(Dataset):
         self.offset = third * idx
 
         index_slice = [i for i in range(third * idx, third * (idx + 1))]
+
+        self.indices = [i for i in range(self.num_sketches)] #whole ds the whole time
+        '''
         if self.mode == 'train': #use whole DS
             self.indices = [i for i in range(self.num_sketches)]
         else: #use a third of the DS
@@ -46,6 +49,7 @@ class SketchyDataset(Dataset):
                 if i not in index_slice:
                     small_slice.append(i)
             self.indices = small_slice
+        '''
 
         print('[*] Created a new {} dataset with {} fold as validation data'.format(self.mode, idx))
 
