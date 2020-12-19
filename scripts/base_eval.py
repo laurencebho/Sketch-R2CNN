@@ -277,6 +277,8 @@ class BaseEval(object):
         num_categories = self.dataset.num_categories()
 
         print('[*] Number of categories:', num_categories)
+        print(f'all fnames: {self.fnames}')
+        print(f'number of fnames: {len(self.fnames)}')
 
         net = self.create_model(num_categories)
         net.print_params()
@@ -284,7 +286,7 @@ class BaseEval(object):
 
         data_loader = DataLoader(self.dataset,
                                  batch_size=batch_size,
-                                 num_workers=3,
+                                 num_workers=1,
                                  shuffle=False,
                                  drop_last=False,
                                  collate_fn=eval_data_collate_simple,

@@ -31,13 +31,15 @@ class SketchyDataset(Dataset):
         self.indices = list()
 
     def set_fold(self, idx):
+        print('performing set fold')
+        print(f'number of sketches: {self.num_sketches}')
         self.fold_idx = idx
         self.indices = list()
 
         third = self.num_sketches // 3        
         self.offset = third * idx
 
-        index_slice = [i for i in range(third * idx, third * (idx + 1))]
+        #index_slice = [i for i in range(third * idx, third * (idx + 1))]
 
         self.indices = [i for i in range(self.num_sketches)] #whole ds the whole time
         '''
