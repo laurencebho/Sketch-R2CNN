@@ -25,6 +25,9 @@ class SketchyDataset(Dataset):
             self.num_sketches = len(saved['sketches'][0])
             self.sketches = saved['sketches']
             self.fnames = saved['fnames']
+            for i, name in enumerate(self.fnames): #remove .svg from end
+                self.fnames[i] = name[:-4]
+                
 
         self.fold_idx = None
         self.offset = 0 #for folds
