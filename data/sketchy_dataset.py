@@ -22,7 +22,7 @@ class SketchyDataset(Dataset):
         with open(self.pkl_file, 'rb') as fh:
             saved = pickle.load(fh)
             self.categories = saved['categories']
-            self.num_sketches = len(saved['sketches'])
+            self.num_sketches = len(saved['sketches'][0])
             self.sketches = saved['sketches']
             self.fnames = saved['fnames']
 
